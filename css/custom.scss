@@ -1,0 +1,34 @@
+// custom scss
+$font-main: 'Questrial', sans-serif;
+$background-color: #f3f3f3;
+$color-main: #35bb00;
+
+@font-face {
+    font-family: 'Questrial';
+    src: url(../fonts/Questrial-Regular.ttf);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: $font-main;
+}
+body{
+    background: $background-color;
+}
+::-webkit-scrollbar{
+    background: #bdbdbdaf;
+}
+::-webkit-scrollbar:hover{
+    background: #aaaaaa;
+}
+::-webkit-scrollbar-thumb{
+    background: $color-main;
+}
+::-webkit-scrollbar-thumb:hover{
+    background: #258300;
+}
+::selection{
+    background: #000;
+    color: #f3f3f3;
+}
