@@ -1,13 +1,13 @@
 // custom scss
+// Variables
 $font-main: 'Questrial', sans-serif;
 $background-color: #f3f3f3;
-$color-main: #51dd19;
-
+$color-main: #a0a0a0;
+// General
 @font-face {
     font-family: 'Questrial';
     src: url(../fonts/Questrial-Regular.ttf);
 }
-
 *{
     margin: 0;
     padding: 0;
@@ -20,20 +20,163 @@ body{
     background: #bdbdbdaf;
 }
 ::-webkit-scrollbar:hover{
-    background: #aaaaaa;
+    background: #d4d4d4;
 }
 ::-webkit-scrollbar-thumb{
     background: $color-main;
 }
 ::-webkit-scrollbar-thumb:hover{
-    background: #258300;
+    background: #a1a1a1af;
 }
 ::selection{
     background: #000;
     color: #f3f3f3;
 }
-.nav-bar{
+
+// Texto de Bienvenida(Inicio)
+@keyframes typing{
+    from{
+        background: #f3f3f3;
+        width: 100%;
+    }
+    to{
+        background: #f3f3f3;
+        width: 0;
+    }
+}
+@keyframes blinking{
+    from{
+        border-left: 1px solid;
+    }
+    to{
+        border-left: 1px #000;
+    }
+}
+.welcome{
+    height: 100vh;
+}
+.welcome h2{
+    position: relative;
+    font-size: 16vw !important;
+    font-family: monospace;
+}
+.welcome p{
+    position: relative;
+    font-size: 2vw !important;
+    font-family: monospace;
+}
+.welcome h2.text-typing::after{
+    content: '';
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    animation: typing 2s alternate steps(13) 2,
+               blinking .4s alternate 15;
+    background: transparent;
+}
+.welcome h2.text-typing2::after{
+    content: '';
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    animation: typing 2s alternate steps(9),
+               blinking .4s alternate 5;
+    background: transparent;
+}
+.welcome p.text-typing3::after{
+    content: '';
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    animation: typing 2s alternate steps(20),
+               blinking .4s alternate 18;
+    background: transparent;
+}
+@media screen and (min-width: 768px){
+    .welcome h2{
+        position: relative;
+        font-size: 8vw !important;
+        font-family: monospace;
+    }
+}
+
+// Sección Inicio
+
+// Sección Portafolio
+.secBriefcase .container{
+    height: calc(100vh - 56px);
+}
+.cards{
     width: 100%;
-    height: 100px;
-    background: $color-main;
+    height: calc(100% - 146.39px);
+    position: relative;
+}
+.secBriefcase .title-sec{
+    padding-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.card-container{
+    position: relative;
+    height: 27rem;
+    width: 18rem;
+    margin: 10px;
+}
+
+.card{
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    transform-style: preserve-3d;
+    transition: .5s;
+}
+
+.cardf{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 0;
+    transform-style: preserve-3d;
+    transition: .5s;
+}
+
+.card-container:hover > .card{
+    transform: rotateY(180deg) scaleX(-1);
+    transition: .5s;
+}
+.card-container:hover > .cardf{
+    z-index: 1;
+    transition: .5s;
+}
+
+// Sección ¿Porque?
+.secWhy .container{
+    height: calc(100vh - 56px);
+}
+.secWhy .title-sec{
+    padding-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+// Sección Contactanos
+.secContactUs .container{
+    height: calc(100vh - 56px);
+}
+.secContactUs .title-sec{
+    padding-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
