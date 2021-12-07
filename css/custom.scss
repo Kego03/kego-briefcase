@@ -57,12 +57,12 @@ body{
 }
 .welcome h2{
     position: relative;
-    font-size: 16vw !important;
+    font-size: 12vw !important;
     font-family: monospace;
 }
 .welcome p{
     position: relative;
-    font-size: 2vw !important;
+    font-size: 6vw !important;
     font-family: monospace;
 }
 .welcome h2.text-typing::after{
@@ -101,17 +101,79 @@ body{
         font-size: 8vw !important;
         font-family: monospace;
     }
+    .welcome p{
+        position: relative;
+        font-size: 2vw !important;
+        font-family: monospace;
+    }
 }
 
 // Sección Inicio
+.secHome .container{
+    position: relative;
+    padding: 0 !important;
+    height: 100vh;
+}
 
 // Sección Portafolio
+@keyframes scroll1{
+    from{
+        left: -2vw;
+        opacity: 0;
+    }
+    to{
+        left: 0;
+        opacity: 1;
+    }
+}
+@keyframes scroll2{
+    from{
+        right: -2vw;
+        opacity: 0;
+    }
+    to{
+        right: 0;
+        opacity: 1;
+    }
+}
+.card-container:nth-child(1), .card-container:nth-child(2){
+    left: -2vw;
+    opacity: 0;
+}
+.card-container:nth-child(3), .card-container:nth-child(4){
+    right: -2vw;
+    opacity: 0;
+}
+.animar .card-container:nth-child(1), .animar .card-container:nth-child(2){
+    left: 0;
+    opacity: 1;
+    animation: scroll1 1s linear;
+}
+.animar .card-container:nth-child(3), .animar .card-container:nth-child(4){
+    right: 0;
+    opacity: 1;
+    animation: scroll2 1s linear;
+}
 .secBriefcase .container{
+    position: relative;
+    padding: 0 !important;
     height: calc(100vh - 56px);
+}
+@media screen and (max-width:1400px) {
+    .secBriefcase .container{
+        height: auto;
+        padding-bottom: 50px !important;
+    }
+}
+@media screen and (max-height:690px) {
+    .secBriefcase .container{
+        height: auto;
+        padding-bottom: 50px !important;
+    }
 }
 .cards{
     width: 100%;
-    height: calc(100% - 146.39px);
+    height: calc(100% - 30vh);
     position: relative;
 }
 .secBriefcase .title-sec{
@@ -159,10 +221,12 @@ body{
 
 // Sección ¿Porque?
 .secWhy .container{
+    position: relative;
+    padding: 0 !important;
     height: calc(100vh - 56px);
 }
 .secWhy .title-sec{
-    padding-top: 100px;
+    padding-top: 10vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -171,6 +235,8 @@ body{
 
 // Sección Contactanos
 .secContactUs .container{
+    position: relative;
+    padding: 0 !important;
     height: calc(100vh - 56px);
 }
 .secContactUs .title-sec{
@@ -179,4 +245,33 @@ body{
     justify-content: center;
     align-items: center;
     text-align: center;
+}
+
+//Botones Scroll
+@keyframes animatebtn {
+    from{
+        top: 0;
+    }
+    to{
+        top: 10px;
+    }
+}
+.btn-down{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    cursor: pointer;
+    color: #a0a0a0;
+    border-radius: 50%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: .5s;
+}
+
+.btn-down i{
+    position: absolute;
+    animation: animatebtn .5s alternate infinite;
 }
