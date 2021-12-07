@@ -18,24 +18,45 @@ const btnD3 = document.querySelector("#btnd3")
 
 let animate1 = document.querySelectorAll(".animate1")
 
-window.addEventListener("scroll", ()=>{
-    let scrollTop = document.documentElement.scrollTop;
-    for(let i= 0; i < animate1.length; i++ ){
-        let heightanimate = animate1[i].offsetTop;
-        if(heightanimate -300 < scrollTop){
-            animate1[i].classList.add("animar");
+if($(window).width() <= 991){
+    window.addEventListener("scroll", ()=>{
+        let scrollTop = document.documentElement.scrollTop;
+        for(let i= 0; i < animate1.length; i++ ){
+            let heightanimate = animate1[i].offsetTop;
+            if(heightanimate -300 < scrollTop){
+                animate1[i].classList.add("animar");
+            }
         }
-    }
-});
-window.addEventListener("scroll", ()=>{
-    let scrollTop = document.documentElement.scrollTop;
-    for(let i= 0; i < animate1.length; i++ ){
-        let heightanimate = animate1[i].offsetTop;
-        if(heightanimate + heightanimate - 300 < scrollTop || scrollTop == 0){
-            animate1[i].classList.remove("animar");
+    });
+    window.addEventListener("scroll", ()=>{
+        let scrollTop = document.documentElement.scrollTop;
+        for(let i= 0; i < animate1.length; i++ ){
+            let heightanimate = animate1[i].offsetTop;
+            if((heightanimate * 3.5) - 300 < scrollTop || scrollTop == 0){
+                animate1[i].classList.remove("animar");
+            }
         }
-    }
-});
+    });
+}else{
+    window.addEventListener("scroll", ()=>{
+        let scrollTop = document.documentElement.scrollTop;
+        for(let i= 0; i < animate1.length; i++ ){
+            let heightanimate = animate1[i].offsetTop;
+            if(heightanimate -300 < scrollTop){
+                animate1[i].classList.add("animar");
+            }
+        }
+    });
+    window.addEventListener("scroll", ()=>{
+        let scrollTop = document.documentElement.scrollTop;
+        for(let i= 0; i < animate1.length; i++ ){
+            let heightanimate = animate1[i].offsetTop;
+            if(heightanimate + heightanimate - 300 < scrollTop || scrollTop == 0){
+                animate1[i].classList.remove("animar");
+            }
+        }
+    });
+}
 
 
 var bsh = document.querySelector(".navbar").clientHeight;
