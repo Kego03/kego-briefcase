@@ -275,3 +275,24 @@ body{
     position: absolute;
     animation: animatebtn .5s alternate infinite;
 }
+@media screen and (max-width:991px){
+    #navbar .navbar-nav{
+        justify-content: center;
+        align-items: center;
+    }
+}
+.main-content{
+    transition: .5s;
+}
+.modal-images{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.modal-images img{
+    width: 200px;
+    height: 200px;
+}

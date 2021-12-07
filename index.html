@@ -32,10 +32,10 @@
 					<img class="d-inline-block align-top" width="30" height="30" src="images/logo.png" alt="logo">
 					Tombstone
 				</a>
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#xd" aria-controls="xd" aria-expanded="false" aria-label="Toggle navigation">
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" href="#navbar" role="button" aria-expanded="false" aria-controls="navbar">
 					<i class="fas fa-bars"></i>
 				  </button>
-				<div class="collapse navbar-collapse" id="xd">
+				<div id="navbar" class="collapse navbar-collapse">
 					<ul class="navbar-nav">
 						<li class="nav-item"><a class="nav-link" id="toHome" href="#Home"><i class="fas fa-home"></i>Inicio</a></li>
 						<li class="nav-item"><a class="nav-link" id="toBriefcase" href="#Briefcase"><i class="fas fa-briefcase"></i>Portafolio</a></li>
@@ -46,7 +46,7 @@
 			</nav>
 		</header>
 		<!-- Main Content -->
-		<main>
+		<main class="main-content">
 			<div>
 				<article>
 					<section class="secHome">
@@ -78,7 +78,7 @@
 									<div class="card d-inline-block cardf">
 										<div class="card-body">
 											<p class="card-text">Este Diseño de lapida es estupendo porque... Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam harum est corrupti molestias numquam nihil! Optio accusamus soluta hic quod animi, esse, repudiandae nesciunt impedit, nemo facere tempore expedita? Sit.</p>
-											<a href="#" class="btn btn-primary">Ver más diseños <i class="fas fa-arrow-right"></i></a>
+											<a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#fotolapidaModal">Ver más diseños <i class="fas fa-arrow-right"></i></a>
 										</div>
 									</div>
 								</div>
@@ -163,6 +163,28 @@
 		<!-- Footer Content -->
 		<footer>
 		</footer>
+		<!-- Modales -->
+		<!-- Modal Fotolapida -->
+		<div class="modal fade" id="fotolapidaModal" tabindex="-1" aria-labelledby="Fotolapida" aria-hidden="true">
+			<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+				<h5 class="modal-title" id="Fotolapida">Fotolapidas</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<h2>Estos son varios de los modelos de Fotolapidas:</h2>
+					<div class="modal-images">
+						<img src="images/Fotolapida2.jpg" alt="Fotolapida">
+						<img src="images/Fotolapida3.jpg" alt="Fotolapida">
+					</div>
+				</div>
+				<div class="modal-footer">
+				<button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+				</div>
+			</div>
+			</div>
+		</div>
 		<!-- Plugins/Scripts -->
 		<!-- Custom Js -->
 		<script src="js/custom.js"></script>

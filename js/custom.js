@@ -61,31 +61,72 @@ if($(window).width() <= 991){
 
 var bsh = document.querySelector(".navbar").clientHeight;
 
-toh.addEventListener("click", ()=>{
-    let sech = document.querySelector(".secHome").offsetTop;
-    window.scrollTo(0, sech - bsh);
-})
-tob.addEventListener("click", ()=>{
-    let secb = document.querySelector(".secBriefcase").offsetTop;
-    window.scrollTo(0, secb - bsh);
-})
-btnD1.addEventListener("click", ()=>{
-    let secb = document.querySelector(".secBriefcase").offsetTop;
-    window.scrollTo(0, secb - bsh);
-})
-tow.addEventListener("click", ()=>{
-    let secw = document.querySelector(".secWhy").offsetTop;
-    window.scrollTo(0, secw - bsh);
-})
-btnD2.addEventListener("click", ()=>{
-    let secw = document.querySelector(".secWhy").offsetTop;
-    window.scrollTo(0, secw - bsh);
-})
-toc.addEventListener("click", ()=>{
-    let secc = document.querySelector(".secContactUs").offsetTop;
-    window.scrollTo(0, secc - bsh);
-})
-btnD3.addEventListener("click", ()=>{
-    let secc = document.querySelector(".secContactUs").offsetTop;
-    window.scrollTo(0, secc - bsh);
+$(".navbar-toggler").on("click", ()=>{
+    if($("#navbar").attr("style")){
+        console.log("xd");
+        toh.addEventListener("click", ()=>{
+            let nbh = document.querySelector("#navbar").clientHeight;
+            let sech = document.querySelector(".secHome").offsetTop;
+            window.scrollTo(0, sech - (bsh+nbh));
+        })
+        tob.addEventListener("click", ()=>{
+            let nbh = document.querySelector("#navbar").clientHeight;
+            let secb = document.querySelector(".secBriefcase").offsetTop;
+            window.scrollTo(0, secb - (bsh+nbh));
+        })
+        btnD1.addEventListener("click", ()=>{
+            let nbh = document.querySelector("#navbar").clientHeight;
+            let secb = document.querySelector(".secBriefcase").offsetTop;
+            window.scrollTo(0, secb - (bsh+nbh));
+        })
+        tow.addEventListener("click", ()=>{
+            let nbh = document.querySelector("#navbar").clientHeight;
+            let secw = document.querySelector(".secWhy").offsetTop;
+            window.scrollTo(0, secw - (bsh+nbh));
+        })
+        btnD2.addEventListener("click", ()=>{
+            let nbh = document.querySelector("#navbar").clientHeight;
+            let secw = document.querySelector(".secWhy").offsetTop;
+            window.scrollTo(0, secw - (bsh+nbh));
+        })
+        toc.addEventListener("click", ()=>{
+            let nbh = document.querySelector("#navbar").clientHeight;
+            let secc = document.querySelector(".secContactUs").offsetTop;
+            window.scrollTo(0, secc - (bsh+nbh));
+        })
+        btnD3.addEventListener("click", ()=>{
+            let nbh = document.querySelector("#navbar").clientHeight;
+            let secc = document.querySelector(".secContactUs").offsetTop;
+            window.scrollTo(0, secc - (bsh+nbh));
+        })
+    }else{
+        toh.addEventListener("click", ()=>{
+            let sech = document.querySelector(".secHome").offsetTop;
+            window.scrollTo(0, sech - bsh);
+        })
+        tob.addEventListener("click", ()=>{
+            let secb = document.querySelector(".secBriefcase").offsetTop;
+            window.scrollTo(0, secb - bsh);
+        })
+        btnD1.addEventListener("click", ()=>{
+            let secb = document.querySelector(".secBriefcase").offsetTop;
+            window.scrollTo(0, secb - bsh);
+        })
+        tow.addEventListener("click", ()=>{
+            let secw = document.querySelector(".secWhy").offsetTop;
+            window.scrollTo(0, secw - bsh);
+        })
+        btnD2.addEventListener("click", ()=>{
+            let secw = document.querySelector(".secWhy").offsetTop;
+            window.scrollTo(0, secw - bsh);
+        })
+        toc.addEventListener("click", ()=>{
+            let secc = document.querySelector(".secContactUs").offsetTop;
+            window.scrollTo(0, secc - bsh);
+        })
+        btnD3.addEventListener("click", ()=>{
+            let secc = document.querySelector(".secContactUs").offsetTop;
+            window.scrollTo(0, secc - bsh);
+        })
+    }
 })
